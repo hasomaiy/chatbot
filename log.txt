@@ -1,0 +1,38 @@
+[2021-12-15 15:25:57] ERROR    Exception on /create [POST]
+Traceback (most recent call last):
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\chatbot\chat_service.py", line 108, in post
+    t = tarfile.open(os.path.join(pathBackup, uploadFilename), 'r')
+  File "C:\Users\somaiya\AppData\Local\Programs\Python\Python39\lib\tarfile.py", line 1616, in open
+    raise ReadError("file could not be opened successfully")
+tarfile.ReadError: file could not be opened successfully
+[2021-12-15 15:31:01] ERROR    Exception on /bot/hello [POST]
+Traceback (most recent call last):
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\venv\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\chatbot\bot_helper_service.py", line 362, in post
+    bot_answer = Flow_Handling(self).regular_flow(input_str, raw_sentence, topic, loaction, session_id)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\chatbot\bot_helper_service.py", line 1277, in regular_flow
+    result = self.my_bestmatch_threshold(inp_str, topic)
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\chatbot\bot_helper_service.py", line 1716, in my_bestmatch_threshold
+    div_sentence1 = sorted(matches, key=lambda x: div_difflib.SequenceMatcher(None, x, query).ratio(),
+  File "C:\Users\somaiya\PycharmProjects\pythonDev\chatbot\bot_helper_service.py", line 1716, in <lambda>
+    div_sentence1 = sorted(matches, key=lambda x: div_difflib.SequenceMatcher(None, x, query).ratio(),
+NameError: name 'div_difflib' is not defined
